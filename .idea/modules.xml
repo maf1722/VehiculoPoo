@@ -1,8 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/VehiculoPoo.iml" filepath="$PROJECT_DIR$/VehiculoPoo.iml" />
-    </modules>
-  </component>
-</project>
+class Coche:
+    def __init__(self, marca, modelo, anio):
+        self.__marca = marca  # Atributo privado
+        self.__modelo = modelo  # Atributo privado
+        self.__anio = anio  # Atributo privado
+
+    def describir(self):
+        print(f"Coche: {self.__marca} {self.__modelo}, Año: {self.__anio}")
+
+    # Métodos Getter
+    def getMarca(self):
+        return self.__marca
+
+    def getModelo(self):
+        return self.__modelo
+
+    def getAnio(self):
+        return self.__anio
+
+    # Métodos Setter
+    def setMarca(self, marca):
+        self.__marca = marca
+
+    def setModelo(self, modelo):
+        self.__modelo = modelo
+
+    def setAnio(self, anio):
+        self.__anio = anio
+
+# Entrada de datos por el usuario
+marca = input("Ingrese la marca del coche: ")
+modelo = input("Ingrese el modelo del coche: ")
+anio = int(input("Ingrese el año del coche: "))
+
+# Creación del objeto con los datos ingresados
+coche1 = Coche(marca, modelo, anio)
+
+# Uso del método describir()
+coche1.describir()
+
+# Modificación de atributos usando setters
+txt_anio = int(input("Ingrese un nuevo año para el coche: "))
+coche1.setAnio(txt_anio)
+coche1.describir()
+
+# Acceso a los atributos usando getters
+print("Marca del coche:", coche1.getMarca())
